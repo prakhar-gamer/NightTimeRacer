@@ -5,6 +5,9 @@ var currentRoadActive = false
 var roads = []
 var relocateRoad = []
 
+
+var lastResult
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for node in infiniteRoad.get_children():
@@ -15,28 +18,59 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	roadCache()
+	passedRoads()
+	roadSort()
 	pass
 
-func roadCache():
+#makes a cache of all the roads 
+#done
+func passedRoads():
+	lastResult = relocateRoad.duplicate()
 	for i in range(roads.size()):
 		var road = roads[i]
-		if road.get_meta("position") == "bottom" && road.bodyExited == true:
-			relocateRoad.append(road)
-			road.bodyExited = false
-			road.set_meta("position", "top")
-			var newBottom = roads[(i+1) % roads.size()]
-			newBottom.set_meta("position", "bottom")
-			var newMiddle = roads[(i+2) % roads.size()]
-			newMiddle.set_meta("position", "middle")
-			var newHeight = newMiddle.get_top_position()
-			road.position.y = int(newHeight)
-			print("updated")
+		if road.bodyExited == true:
+			if not relocateRoad.has(road):
+				relocateRoad.append(road)
+		pass
 	pass
+	if relocateRoad != lastResult:
+		print(relocateRoad)
 
+#need to remove only the bottom from the relocate road and update middle to be new bottom
 func roadSort():
 	if relocateRoad.size() == 2:
-			var road = relocateRoad[2]
-			var toproad = relocateRoad[(i+2) % relocateRoad.size()]
-			var newHeight = toproad.get_top_height()
+		var bottomRoad
+		var middleRoad
+		var topRoad
+		for road in roads:
+			if road.get_meta("position")=="bottom":
+				bottomRoad = road
+			if road.get_meta("position")=="middle":
+				middleRoad = road
+			if road.get_meta("position") == "top":
+				topRoad = road
+		var newYPos = topRoad.get_top_position()
+		bottomRoad.position.y = newYPos-40
+		bottomRoad.bodyExited = false
+		bottomRoad.set_meta("position", "top")
+		topRoad.set_meta("position", "middle")
+		middleRoad.set_meta("position", "bottom")
+		relocateRoad.erase(bottomRoad)
 		pass
+
+
+
+#func roadCache():
+	#for i in range(roads.size()):
+		#var road = roads[i]
+		#if road.get_meta("position") == "bottom" && road.bodyExited == true:
+			#relocateRoad.append(road)
+			#road.bodyExited = false
+			#road.set_meta("position", "top")
+			#var newBottom = roads[(i+1) % roads.size()]
+			#newBottom.set_meta("position", "bottom")
+			#var newMiddle = roads[(i+2) % roads.size()]
+			#newMiddle.set_meta("position", "middle")
+			#var newHeight = newMiddle.get_top_position()
+			#print("updated")
+	#pass

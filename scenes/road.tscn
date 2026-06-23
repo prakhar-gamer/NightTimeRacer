@@ -14,7 +14,7 @@ size = Vector2(763, 61)
 script = ExtResource("1_fy6l0")
 
 [node name="Road1" type="Node2D" parent="." unique_id=1071703455 groups=["Road"]]
-position = Vector2(3, -1749)
+position = Vector2(17, 892)
 script = ExtResource("2_fy6l0")
 metadata/position = &"bottom"
 metadata/_edit_group_ = true
@@ -70,7 +70,7 @@ position = Vector2(558, 710)
 shape = SubResource("RectangleShape2D_ekj83")
 
 [node name="Road2" type="Node2D" parent="." unique_id=185081000 groups=["Road"]]
-position = Vector2(8, 17)
+position = Vector2(20, 9)
 script = ExtResource("2_fy6l0")
 metadata/_edit_group_ = true
 metadata/position = &"middle"
@@ -125,7 +125,7 @@ position = Vector2(558, 710)
 shape = SubResource("RectangleShape2D_ekj83")
 
 [node name="Road3" type="Node2D" parent="." unique_id=1885463865 groups=["Road"]]
-position = Vector2(-1, -866)
+position = Vector2(16, -869)
 script = ExtResource("2_fy6l0")
 metadata/_edit_group_ = true
 metadata/position = &"top"
@@ -182,6 +182,6 @@ shape = SubResource("RectangleShape2D_ekj83")
 [connection signal="body_exited" from="Road1/ExitRoad" to="Road1" method="_on_exit_road_body_exited"]
 [connection signal="body_entered" from="Road1/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]
 [connection signal="body_exited" from="Road2/ExitRoad" to="Road2" method="_on_exit_road_body_exited"]
-[connection signal="body_entered" from="Road2/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]
-[connection signal="body_exited" from="Road3/ExitRoad" to="Road1" method="_on_exit_road_body_exited"]
-[connection signal="body_entered" from="Road3/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]
+[connection signal="body_entered" from="Road2/EnterRoad" to="Road2" method="_on_enter_road_body_entered"]
+[connection signal="body_exited" from="Road3/ExitRoad" to="Road3" method="_on_exit_road_body_exited"]
+[connection signal="body_entered" from="Road3/EnterRoad" to="Road3" method="_on_enter_road_body_entered"]

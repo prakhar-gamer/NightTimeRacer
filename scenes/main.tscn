@@ -12,5 +12,5 @@ position = Vector2(532, 431)
 
 [node name="InfiniteRoad" parent="." unique_id=1104710957 instance=ExtResource("2_0wfyh")]
 z_index = -1
-position = Vector2(-13, -663)
+position = Vector2(18, -908)
 metadata/_edit_lock_ = true
