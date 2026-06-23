@@ -6,16 +6,17 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2c5k"]
 size = Vector2(126, 62)
 
-[node name="PlayerCar" type="CharacterBody2D" unique_id=1530220514]
+[node name="PlayerCar" type="CharacterBody2D" unique_id=1530220514 groups=["player_car"]]
 script = ExtResource("1_ir7uv")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986271812]
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_s2c5k")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1369685853]
-position = Vector2(0, -1)
+position = Vector2(1, 0)
 scale = Vector2(1, 0.515625)
 texture = ExtResource("2_v64uw")
-metadata/_edit_group_ = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1293125474]

@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@export var allowBackwords = true
+
 
 @export var MaxVelocity = 1000
 @export var acceleration  = 400
@@ -49,9 +51,15 @@ func _process(delta: float) -> void:
 	
 	velocity = forwardVelocity + (rightVelocity * driftFactor)
 	
+	#depending on gamemode you can disable backwords movement
+	var backwordsVelocity
+	if allowBackwords == true:
+		backwordsVelocity = MaxVelocity
+	else:
+		backwordsVelocity = 0
 	
 	velocity.x = clampf(velocity.x, -MaxVelocity, MaxVelocity)
-	velocity.y = clampf(velocity.y, -MaxVelocity, MaxVelocity)
+	velocity.y = clampf(velocity.y, -MaxVelocity, backwordsVelocity)
 	
 	move_and_slide()
 	pass

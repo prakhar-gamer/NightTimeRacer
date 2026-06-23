@@ -1,0 +1,187 @@
+[gd_scene format=3 uid="uid://dlym4dbutpoe2"]
+
+[ext_resource type="Script" uid="uid://ds8h2m6fcig0a" path="res://Scripts/roads/roadManager.gd" id="1_fy6l0"]
+[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="1_mv8x7"]
+[ext_resource type="Script" uid="uid://d3r5bgik7iygs" path="res://Scripts/roads/road.gd" id="2_fy6l0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fy6l0"]
+size = Vector2(134.36365, 12.094856)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ekj83"]
+size = Vector2(763, 61)
+
+[node name="InfiniteRoad" type="Node2D" unique_id=1310888899]
+script = ExtResource("1_fy6l0")
+
+[node name="Road1" type="Node2D" parent="." unique_id=1071703455 groups=["Road"]]
+position = Vector2(3, -1749)
+script = ExtResource("2_fy6l0")
+metadata/position = &"bottom"
+metadata/_edit_group_ = true
+
+[node name="Streeet" type="Sprite2D" parent="Road1" unique_id=1376617791]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(5.5350364e-07, 0.3704721, 0.3790928, 1)
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+texture = ExtResource("1_mv8x7")
+metadata/_edit_group_ = true
+
+[node name="White Lines" type="Node2D" parent="Road1" unique_id=463720630]
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+
+[node name="line4" type="Sprite2D" parent="Road1/White Lines" unique_id=2004327131]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.7272568, -51.05371)
+scale = Vector2(0.03977265, 0.15585718)
+texture = ExtResource("1_mv8x7")
+
+[node name="line3" type="Sprite2D" parent="Road1/White Lines" unique_id=1587091149]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.9090729, -23.488)
+scale = Vector2(0.047585186, 0.19071425)
+texture = ExtResource("1_mv8x7")
+
+[node name="line2" type="Sprite2D" parent="Road1/White Lines" unique_id=959571543]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.5454421, 8.191999)
+scale = Vector2(0.051136333, 0.2022857)
+texture = ExtResource("1_mv8x7")
+
+[node name="line1" type="Sprite2D" parent="Road1/White Lines" unique_id=493536161]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.36362955, 45.202282)
+scale = Vector2(0.058948867, 0.26071423)
+texture = ExtResource("1_mv8x7")
+
+[node name="ExitRoad" type="Area2D" parent="Road1" unique_id=812334226]
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road1/ExitRoad" unique_id=1109459042]
+position = Vector2(-3.090921, -57.929146)
+shape = SubResource("RectangleShape2D_fy6l0")
+
+[node name="EnterRoad" type="Area2D" parent="Road1" unique_id=1020400416]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road1/EnterRoad" unique_id=795056191]
+position = Vector2(558, 710)
+shape = SubResource("RectangleShape2D_ekj83")
+
+[node name="Road2" type="Node2D" parent="." unique_id=185081000 groups=["Road"]]
+position = Vector2(8, 17)
+script = ExtResource("2_fy6l0")
+metadata/_edit_group_ = true
+metadata/position = &"middle"
+
+[node name="Streeet" type="Sprite2D" parent="Road2" unique_id=1355994493]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(5.5350364e-07, 0.3704721, 0.3790928, 1)
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+texture = ExtResource("1_mv8x7")
+
+[node name="White Lines" type="Node2D" parent="Road2" unique_id=1334700508]
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+
+[node name="line4" type="Sprite2D" parent="Road2/White Lines" unique_id=2121266368]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.7272568, -51.05371)
+scale = Vector2(0.03977265, 0.15585718)
+texture = ExtResource("1_mv8x7")
+
+[node name="line3" type="Sprite2D" parent="Road2/White Lines" unique_id=1125402000]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.9090729, -23.488)
+scale = Vector2(0.047585186, 0.19071425)
+texture = ExtResource("1_mv8x7")
+
+[node name="line2" type="Sprite2D" parent="Road2/White Lines" unique_id=1088933631]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.5454421, 8.191999)
+scale = Vector2(0.051136333, 0.2022857)
+texture = ExtResource("1_mv8x7")
+
+[node name="line1" type="Sprite2D" parent="Road2/White Lines" unique_id=1914198136]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.36362955, 45.202282)
+scale = Vector2(0.058948867, 0.26071423)
+texture = ExtResource("1_mv8x7")
+
+[node name="ExitRoad" type="Area2D" parent="Road2" unique_id=1105917774]
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road2/ExitRoad" unique_id=1998266912]
+position = Vector2(-3.090921, -57.929146)
+shape = SubResource("RectangleShape2D_fy6l0")
+
+[node name="EnterRoad" type="Area2D" parent="Road2" unique_id=763097623]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road2/EnterRoad" unique_id=1754665307]
+position = Vector2(558, 710)
+shape = SubResource("RectangleShape2D_ekj83")
+
+[node name="Road3" type="Node2D" parent="." unique_id=1885463865 groups=["Road"]]
+position = Vector2(-1, -866)
+script = ExtResource("2_fy6l0")
+metadata/_edit_group_ = true
+metadata/position = &"top"
+
+[node name="Streeet" type="Sprite2D" parent="Road3" unique_id=313405657]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(5.5350364e-07, 0.3704721, 0.3790928, 1)
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+texture = ExtResource("1_mv8x7")
+
+[node name="White Lines" type="Node2D" parent="Road3" unique_id=727627266]
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+
+[node name="line4" type="Sprite2D" parent="Road3/White Lines" unique_id=1531312188]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.7272568, -51.05371)
+scale = Vector2(0.03977265, 0.15585718)
+texture = ExtResource("1_mv8x7")
+
+[node name="line3" type="Sprite2D" parent="Road3/White Lines" unique_id=1340372158]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.9090729, -23.488)
+scale = Vector2(0.047585186, 0.19071425)
+texture = ExtResource("1_mv8x7")
+
+[node name="line2" type="Sprite2D" parent="Road3/White Lines" unique_id=574455961]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.5454421, 8.191999)
+scale = Vector2(0.051136333, 0.2022857)
+texture = ExtResource("1_mv8x7")
+
+[node name="line1" type="Sprite2D" parent="Road3/White Lines" unique_id=1314890949]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+position = Vector2(0.36362955, 45.202282)
+scale = Vector2(0.058948867, 0.26071423)
+texture = ExtResource("1_mv8x7")
+
+[node name="ExitRoad" type="Area2D" parent="Road3" unique_id=1331440982]
+position = Vector2(560.00006, 304)
+scale = Vector2(5.5, 6.8359375)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road3/ExitRoad" unique_id=930360917]
+position = Vector2(-3.090921, -57.929146)
+shape = SubResource("RectangleShape2D_fy6l0")
+
+[node name="EnterRoad" type="Area2D" parent="Road3" unique_id=782318915]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road3/EnterRoad" unique_id=660845255]
+position = Vector2(558, 710)
+shape = SubResource("RectangleShape2D_ekj83")
+
+[connection signal="body_exited" from="Road1/ExitRoad" to="Road1" method="_on_exit_road_body_exited"]
+[connection signal="body_entered" from="Road1/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]
+[connection signal="body_exited" from="Road2/ExitRoad" to="Road2" method="_on_exit_road_body_exited"]
+[connection signal="body_entered" from="Road2/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]
+[connection signal="body_exited" from="Road3/ExitRoad" to="Road1" method="_on_exit_road_body_exited"]
+[connection signal="body_entered" from="Road3/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]
