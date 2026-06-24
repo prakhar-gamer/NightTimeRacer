@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 @export var allowBackwords = true
 
-
 @export var MaxVelocity = 1000
 @export var acceleration  = 400
 @export var turnFactor = 3
@@ -12,6 +11,9 @@ var movement = Vector2()
 var rotationAngle = 0
 
 @onready var car = $"."
+@onready var left_signal = $left_signal
+@onready var right_signal = $right_signal
+
 
 #testing
 var count = 0
@@ -24,6 +26,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	left_signal.hide()
+	right_signal.hide()
 	captureMovement()
 	
 	#adds the force for forward and back motion
@@ -74,4 +78,8 @@ func captureMovement():
 		movement.x = 1
 	if Input.is_action_pressed("left"):
 		movement.x = -1
-		
+	
+	if movement.x > 0: 
+		right_signal.show()
+	if movement.x < 0:
+		left_signal.show()
