@@ -7,10 +7,12 @@
 size = Vector2(78, 88)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knn66"]
-size = Vector2(20, 17.918657)
+size = Vector2(5.6569524, 17.772984)
 
 [node name="enemy_car" type="CharacterBody2D" unique_id=953048636]
 script = ExtResource("1_mr7yb")
+SPEED = 500.0
+acceleration = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=217354970]
 position = Vector2(3, 6)
@@ -25,7 +27,9 @@ texture = ExtResource("1_3y6xc")
 [node name="crashZone" type="Area2D" parent="." unique_id=857048491]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crashZone" unique_id=794572578]
-position = Vector2(-2.0000038, 2)
-rotation = 3.1415927
+position = Vector2(-1.0000005, 13)
+rotation = -3.1415925
 scale = Vector2(9.899323, -5.682782)
 shape = SubResource("RectangleShape2D_knn66")
+
+[connection signal="body_entered" from="crashZone" to="." method="_on_crash_zone_body_entered"]

@@ -12,7 +12,7 @@ func _ready() -> void:
 	add_to_group("enemy_car")
 	pass
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	#adds the force for forward and back motion
 	#engine force
 	velocity.y += acceleration * delta
@@ -24,3 +24,9 @@ func _process(delta: float) -> void:
 #makes the car automatically go a direction
 func travel():
 	pass
+
+
+func _on_crash_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_car"):
+		print("Crashed!")
+	pass # Replace with function body.

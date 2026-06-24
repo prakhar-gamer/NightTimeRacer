@@ -20,6 +20,7 @@ scale = Vector2(1, 0.515625)
 texture = ExtResource("2_v64uw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293125474]
+offset = Vector2(0, -300)
 
 [node name="Enemy_spawner" parent="Camera2D" unique_id=539123083 instance=ExtResource("3_v64uw")]
 
