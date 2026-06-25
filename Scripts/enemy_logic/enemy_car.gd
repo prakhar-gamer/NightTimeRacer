@@ -7,9 +7,9 @@ var MaxVelocity = 500
 
 @onready var ViewZone = $ViewZone/CollisionShape2D
 var lane_change = false
-var lane_change_angle = 20
+var lane_change_angle = 35
 var lane = "none"
-
+var border = "none"
 
 func _ready() -> void:
 	add_to_group("enemy_car")
@@ -62,9 +62,31 @@ func _on_view_zone_body_entered(body: Node2D) -> void:
 		if body.global_position.x > xMiddle:
 			lane = "left"
 		lane_change=true
+		laneChangeCheck()
 	pass # Replace with function body.
+
+func laneChangeCheck():
+	if lane == "left" && border == "left":
+		lane_change= false
+	if lane == "right" && border == "right":
+		lane_change = false
+	pass
 
 
 func _on_view_zone_body_exited(body: Node2D) -> void:
 	lane_change=false
+	pass # Replace with function body.
+
+
+func _on_left_lane_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("border"):
+		border = "left"
+		pass
+	pass # Replace with function body.
+
+
+func _on_right_lane_zone_body_entered(body: Node2D) -> void:
+	if body.is_in_group("border"):
+		border = "right"
+		pass
 	pass # Replace with function body.

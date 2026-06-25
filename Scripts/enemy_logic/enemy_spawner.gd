@@ -18,20 +18,16 @@ var removable_enemy = []
 func _ready() -> void:
 	length = spawnarea.shape.size.x
 	timer.start(randf_range(.2, .8))
+	xHigherLimit = main.global_position.x + length/2
+	xLowerLimit = main.global_position.x - length/2 
 	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta: float) -> void:
-	pass
-	
 
 #gets a random position in between the length and spawns the enemy car node.
 func enemySpawn():
 	if 0 <= enenmy_count && enenmy_count < 4:
 		var spawn_pos = spawnarea.global_position
 		
-		var spawnLocoX = randf_range(spawn_pos.x - length / 4.0, spawn_pos.x + length / 4.0)
+		var spawnLocoX = randf_range(xLowerLimit, xHigherLimit)
 		var spawnLocoY = spawn_pos.y
 		var enemy = enemy_car.instantiate()
 		enemy.global_position = Vector2(spawnLocoX, spawnLocoY)

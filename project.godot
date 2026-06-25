@@ -23,6 +23,7 @@ enabled=PackedStringArray("res://addons/godot_super-wakatime/plugin.cfg")
 
 player_car="The car is a player car"
 enemy_car="Non player car "
+border="marks map border"
 
 [input]
 

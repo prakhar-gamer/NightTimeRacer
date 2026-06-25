@@ -10,6 +10,9 @@ size = Vector2(134.36365, 12.094856)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ekj83"]
 size = Vector2(763, 61)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeiim"]
+size = Vector2(67, 890)
+
 [node name="InfiniteRoad" type="Node2D" unique_id=1310888899]
 script = ExtResource("1_fy6l0")
 
@@ -69,6 +72,20 @@ shape = SubResource("RectangleShape2D_fy6l0")
 position = Vector2(558, 710)
 shape = SubResource("RectangleShape2D_ekj83")
 
+[node name="leftBorder" type="StaticBody2D" parent="Road1" unique_id=1528328662 groups=["border"]]
+position = Vector2(-12, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road1/leftBorder" unique_id=456506672]
+position = Vector2(200.5, 302)
+shape = SubResource("RectangleShape2D_xeiim")
+
+[node name="rightBorder" type="StaticBody2D" parent="Road1" unique_id=1559961227 groups=["border"]]
+position = Vector2(734, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road1/rightBorder" unique_id=722652284]
+position = Vector2(200.5, 302)
+shape = SubResource("RectangleShape2D_xeiim")
+
 [node name="Road2" type="Node2D" parent="." unique_id=185081000 groups=["Road"]]
 position = Vector2(20, 9)
 script = ExtResource("2_fy6l0")
@@ -124,6 +141,20 @@ shape = SubResource("RectangleShape2D_fy6l0")
 position = Vector2(558, 710)
 shape = SubResource("RectangleShape2D_ekj83")
 
+[node name="leftBorder" type="StaticBody2D" parent="Road2" unique_id=42541088 groups=["border"]]
+position = Vector2(-15, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road2/leftBorder" unique_id=940865557]
+position = Vector2(200.5, 302)
+shape = SubResource("RectangleShape2D_xeiim")
+
+[node name="rightBorder" type="StaticBody2D" parent="Road2" unique_id=44254920 groups=["border"]]
+position = Vector2(732, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road2/rightBorder" unique_id=351209780]
+position = Vector2(200.5, 302)
+shape = SubResource("RectangleShape2D_xeiim")
+
 [node name="Road3" type="Node2D" parent="." unique_id=1885463865 groups=["Road"]]
 position = Vector2(16, -869)
 script = ExtResource("2_fy6l0")
@@ -178,6 +209,20 @@ shape = SubResource("RectangleShape2D_fy6l0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Road3/EnterRoad" unique_id=660845255]
 position = Vector2(558, 710)
 shape = SubResource("RectangleShape2D_ekj83")
+
+[node name="leftBorder" type="StaticBody2D" parent="Road3" unique_id=837923527 groups=["border"]]
+position = Vector2(-11, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road3/leftBorder" unique_id=134091090]
+position = Vector2(200.5, 302)
+shape = SubResource("RectangleShape2D_xeiim")
+
+[node name="rightBorder" type="StaticBody2D" parent="Road3" unique_id=1613060835 groups=["border"]]
+position = Vector2(737, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Road3/rightBorder" unique_id=1911397177]
+position = Vector2(200.5, 302)
+shape = SubResource("RectangleShape2D_xeiim")
 
 [connection signal="body_exited" from="Road1/ExitRoad" to="Road1" method="_on_exit_road_body_exited"]
 [connection signal="body_entered" from="Road1/EnterRoad" to="Road1" method="_on_enter_road_body_entered"]

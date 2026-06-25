@@ -9,7 +9,7 @@
 script = ExtResource("1_sugp2")
 
 [node name="PlayerCar" parent="." unique_id=1530220514 instance=ExtResource("1_o5qli")]
-position = Vector2(532, 431)
+position = Vector2(593, 676)
 
 [node name="InfiniteRoad" parent="." unique_id=1104710957 instance=ExtResource("2_0wfyh")]
 z_index = -1

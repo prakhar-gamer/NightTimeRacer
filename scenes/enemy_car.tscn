@@ -12,6 +12,12 @@ size = Vector2(264, 379)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knn66"]
 size = Vector2(5.6569524, 17.772984)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1q4dv"]
+size = Vector2(139, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3mung"]
+size = Vector2(148, 98)
+
 [node name="enemy_car" type="CharacterBody2D" unique_id=953048636]
 script = ExtResource("1_mr7yb")
 SPEED = 500.0
@@ -41,6 +47,20 @@ rotation = -3.1415925
 scale = Vector2(9.899323, -5.682782)
 shape = SubResource("RectangleShape2D_knn66")
 
+[node name="leftLaneZone" type="Area2D" parent="." unique_id=615838562]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftLaneZone" unique_id=793962807]
+position = Vector2(-115.5, 6)
+shape = SubResource("RectangleShape2D_1q4dv")
+
+[node name="rightLaneZone" type="Area2D" parent="." unique_id=358576735]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightLaneZone" unique_id=754959742]
+position = Vector2(124, 5)
+shape = SubResource("RectangleShape2D_3mung")
+
 [connection signal="body_entered" from="ViewZone" to="." method="_on_view_zone_body_entered"]
 [connection signal="body_exited" from="ViewZone" to="." method="_on_view_zone_body_exited"]
 [connection signal="body_entered" from="crashZone" to="." method="_on_crash_zone_body_entered"]
+[connection signal="body_entered" from="leftLaneZone" to="." method="_on_left_lane_zone_body_entered"]
+[connection signal="body_entered" from="rightLaneZone" to="." method="_on_right_lane_zone_body_entered"]
