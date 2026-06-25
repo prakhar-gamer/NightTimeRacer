@@ -9,6 +9,7 @@ size = Vector2(126, 62)
 
 [node name="PlayerCar" type="CharacterBody2D" unique_id=1530220514 groups=["player_car"]]
 script = ExtResource("1_ir7uv")
+allowBackwords = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986271812]
 position = Vector2(1, -1)
