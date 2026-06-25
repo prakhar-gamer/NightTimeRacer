@@ -11,6 +11,11 @@ var lane_change_angle = 35
 var lane = "none"
 var border = "none"
 
+
+@onready var rightLight = $rightLight
+@onready var leftLight = $leftLight
+
+
 func _ready() -> void:
 	add_to_group("enemy_car")
 	pass
@@ -20,11 +25,15 @@ func _ready() -> void:
 func drivingLogic(delta: float) -> float:
 	if lane == "right":
 		rotation = lane_change_angle * delta
+		rightLight.show()
 	if lane == "left":
 		rotation = -lane_change_angle * delta
+		leftLight.show()
 	return rotation
 
 func _physics_process(delta: float) -> void:
+	rightLight.hide()
+	leftLight.hide()
 	#adds the force for forward and back motion
 	#engine force
 	velocity.y += acceleration * delta

@@ -50,20 +50,19 @@ func _process(delta: float) -> void:
 	
 	#Reduces perpindicular velocity
 	#find the velocity values
-	var forwardVelocity = -global_transform.y * velocity.dot(-global_transform.y);
 	var rightVelocity = global_transform.x * velocity.dot(global_transform.x)
 	
+	
+	var forwardSpeed = velocity.dot(-global_transform.y)
+	
+	var maxForwardSpeed = MaxVelocity
+	var minForwardSpeed = -MaxVelocity if allowBackwords else 0.0
+	
+	# FINISHING NEW CLAMPING TO FIX 
+	forwardSpeed = clampf(forwardSpeed, minForwardSpeed, maxForwardSpeed)
+	
+	var forwardVelocity = -global_transform.y * forwardSpeed
 	velocity = forwardVelocity + (rightVelocity * driftFactor)
-	
-	#depending on gamemode you can disable backwords movement
-	var backwordsVelocity
-	if allowBackwords == true:
-		backwordsVelocity = MaxVelocity
-	else:
-		backwordsVelocity = 0
-	
-	velocity.x = clampf(velocity.x, -MaxVelocity, MaxVelocity)
-	velocity.y = clampf(velocity.y, -MaxVelocity, backwordsVelocity)
 	
 	move_and_slide()
 	pass

@@ -1,7 +1,7 @@
 extends Node
 
-@export var xLowerLimit = 0
-@export var xHigherLimit =0
+var xLowerLimit = 0
+var xHigherLimit =0
 
 @onready var main = $"."
 @onready var spawnarea = $"spawning range/CollisionShape2D"
@@ -24,10 +24,10 @@ func _ready() -> void:
 
 #gets a random position in between the length and spawns the enemy car node.
 func enemySpawn():
-	if 0 <= enenmy_count && enenmy_count < 4:
+	if 0 <= enenmy_count && enenmy_count < 3:
 		var spawn_pos = spawnarea.global_position
 		
-		var spawnLocoX = randf_range(xLowerLimit, xHigherLimit)
+		var spawnLocoX = randf_range(xLowerLimit-40, xHigherLimit-40)
 		var spawnLocoY = spawn_pos.y
 		var enemy = enemy_car.instantiate()
 		enemy.global_position = Vector2(spawnLocoX, spawnLocoY)
@@ -56,7 +56,6 @@ func _on_exit_range_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	enemySpawn()
 	enemyRemove()
-	enenmy_count = enenmy_count
 	
 	#spawner timing
 	var rngSpawnRate = randf_range(.2,.8)
