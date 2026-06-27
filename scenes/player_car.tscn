@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://i6dyy07ih1v2" path="res://Scripts/player_car.gd" id="1_ir7uv"]
 [ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="2_v64uw"]
 [ext_resource type="PackedScene" uid="uid://cvq2m1j5hmfie" path="res://scenes/enemy_spawner.tscn" id="3_v64uw"]
+[ext_resource type="PackedScene" uid="uid://bkmvwv7b2cyf0" path="res://scenes/ui/game_pause.tscn" id="4_5hvhq"]
+[ext_resource type="PackedScene" uid="uid://bgck8wbugbvyx" path="res://scenes/ui/dead.tscn" id="5_w3cpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2c5k"]
 size = Vector2(59, 62)
@@ -22,9 +24,14 @@ texture = ExtResource("2_v64uw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293125474]
 offset = Vector2(0, -300)
-zoom = Vector2(0.75, 0.75)
 
 [node name="Enemy_spawner" parent="Camera2D" unique_id=539123083 instance=ExtResource("3_v64uw")]
+
+[node name="points" type="RichTextLabel" parent="Camera2D" unique_id=1975198045]
+offset_left = -579.0
+offset_top = -624.0
+offset_right = -294.0
+offset_bottom = -515.0
 
 [node name="right_signal" type="Sprite2D" parent="." unique_id=1243447412]
 modulate = Color(1, 1, 0, 1)
@@ -37,3 +44,10 @@ modulate = Color(1, 1, 0, 1)
 position = Vector2(-21.75, -27.25)
 scale = Vector2(0.13671875, 0.08203127)
 texture = ExtResource("2_v64uw")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1468184435]
+visible = false
+
+[node name="Dead" parent="CanvasLayer" unique_id=1212509600 instance=ExtResource("5_w3cpc")]
+
+[node name="GamePause" parent="CanvasLayer" unique_id=113430541 instance=ExtResource("4_5hvhq")]

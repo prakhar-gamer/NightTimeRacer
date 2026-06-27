@@ -5,7 +5,7 @@ extends CharacterBody2D
 @export var MaxVelocity = 1000
 @export var acceleration  = 400
 @export var turnFactor = 3
-@export var driftFactor = 0.4
+@export var driftFactor = 0.7
 
 var movement = Vector2()
 var rotationAngle = 0
@@ -13,7 +13,7 @@ var rotationAngle = 0
 @onready var car = $"."
 @onready var left_signal = $left_signal
 @onready var right_signal = $right_signal
-
+@onready var PointScoreText = $Camera2D/points
 
 #testing
 var count = 0
@@ -25,7 +25,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	left_signal.hide()
 	right_signal.hide()
 	captureMovement()

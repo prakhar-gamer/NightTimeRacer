@@ -60,6 +60,8 @@ func travel():
 func _on_crash_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player_car"):
 		print("Crashed!")
+		EventManager.emit_signal("Crashed")
+		EventManager.Pause.emit(false)
 	pass # Replace with function body.
 
 
@@ -70,7 +72,9 @@ func _on_view_zone_body_entered(body: Node2D) -> void:
 			lane = "right"
 		if body.global_position.x > xMiddle:
 			lane = "left"
-		lane_change=true
+		var rand = randf()
+		if rand > 0.5:
+			lane_change=true
 		laneChangeCheck()
 	pass # Replace with function body.
 
@@ -98,4 +102,10 @@ func _on_right_lane_zone_body_entered(body: Node2D) -> void:
 	if body.is_in_group("border"):
 		border = "right"
 		pass
+	pass # Replace with function body.
+
+
+func _on_cutted_up_body_entered(body: Node2D) -> void:
+	if body.is_in_group("player_car"):
+		EventManager.Points += 1
 	pass # Replace with function body.

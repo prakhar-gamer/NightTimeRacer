@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://brdyyuekl32hn"]
+
+[ext_resource type="Script" uid="uid://bcpng6468trxo" path="res://scenes/ui/title_screen.gd" id="1_aqpy5"]
+[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="1_eb34j"]
+
+[node name="titleScreen" type="Node2D" unique_id=1505115482]
+script = ExtResource("1_aqpy5")
+
+[node name="HeroImage" type="Sprite2D" parent="." unique_id=663804288]
+position = Vector2(581, 208)
+scale = Vector2(3.7734375, 1.7109375)
+texture = ExtResource("1_eb34j")
+
+[node name="Control" type="Control" parent="." unique_id=153889326]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=1552431392]
+layout_mode = 1
+offset_top = 314.0
+offset_right = 1154.0
+offset_bottom = 647.0
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = -1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer" unique_id=730884317]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Play" type="TextureButton" parent="Control/MarginContainer/VBoxContainer" unique_id=1492531720]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_eb34j")
+
+[node name="Quit" type="TextureButton" parent="Control/MarginContainer/VBoxContainer" unique_id=1690508383]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("1_eb34j")
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

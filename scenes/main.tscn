@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://d2um2sj0844cp" path="res://scenes/player_car.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b1ylub7kqqgl3" path="res://Scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dlym4dbutpoe2" path="res://scenes/road.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://cc61ygnyv55gr" path="res://scenes/enemy_car.tscn" id="4_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=351442125]
 script = ExtResource("1_sugp2")
@@ -15,6 +14,3 @@ position = Vector2(593, 676)
 z_index = -1
 position = Vector2(18, -908)
 metadata/_edit_lock_ = true
-
-[node name="enemy_car" parent="." unique_id=953048636 instance=ExtResource("4_jyhfs")]
-position = Vector2(585, -1982)

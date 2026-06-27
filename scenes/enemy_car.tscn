@@ -4,13 +4,13 @@
 [ext_resource type="Script" uid="uid://c8srjjrpur2b2" path="res://Scripts/enemy_logic/enemy_car.gd" id="1_mr7yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ermhv"]
-size = Vector2(78, 88)
+size = Vector2(91, 87)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mr7yb"]
 size = Vector2(264, 379)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knn66"]
-size = Vector2(5.6569524, 17.772984)
+size = Vector2(8.384413, 17.860971)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q4dv"]
 size = Vector2(139, 102)
@@ -18,13 +18,16 @@ size = Vector2(139, 102)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mung"]
 size = Vector2(148, 98)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_diiv3"]
+size = Vector2(1822, 20)
+
 [node name="enemy_car" type="CharacterBody2D" unique_id=953048636]
 script = ExtResource("1_mr7yb")
 SPEED = 500.0
 acceleration = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=217354970]
-position = Vector2(3, 6)
+position = Vector2(0.5, 6.5)
 shape = SubResource("RectangleShape2D_ermhv")
 
 [node name="enemy" type="Sprite2D" parent="." unique_id=59312003]
@@ -42,7 +45,7 @@ shape = SubResource("RectangleShape2D_mr7yb")
 [node name="crashZone" type="Area2D" parent="." unique_id=857048491]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crashZone" unique_id=794572578]
-position = Vector2(-1, 10.999999)
+position = Vector2(0.5000081, 11.250005)
 rotation = -3.1415925
 scale = Vector2(9.899323, -5.682782)
 shape = SubResource("RectangleShape2D_knn66")
@@ -73,8 +76,15 @@ position = Vector2(-31.874998, 41.000004)
 scale = Vector2(0.21679688, 0.13671874)
 texture = ExtResource("1_3y6xc")
 
+[node name="cutted_up" type="Area2D" parent="." unique_id=1572901946]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cutted_up" unique_id=1812719921]
+position = Vector2(-65, 0)
+shape = SubResource("RectangleShape2D_diiv3")
+
 [connection signal="body_entered" from="ViewZone" to="." method="_on_view_zone_body_entered"]
 [connection signal="body_exited" from="ViewZone" to="." method="_on_view_zone_body_exited"]
 [connection signal="body_entered" from="crashZone" to="." method="_on_crash_zone_body_entered"]
 [connection signal="body_entered" from="leftLaneZone" to="." method="_on_left_lane_zone_body_entered"]
 [connection signal="body_entered" from="rightLaneZone" to="." method="_on_right_lane_zone_body_entered"]
+[connection signal="body_entered" from="cutted_up" to="." method="_on_cutted_up_body_entered"]
