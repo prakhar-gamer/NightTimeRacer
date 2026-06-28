@@ -13,7 +13,6 @@ func _ready() -> void:
 	for node in infiniteRoad.get_children():
 		if node.is_in_group("Road"):
 			roads.append(node)
-	print(roads)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -33,12 +32,10 @@ func passedRoads():
 				relocateRoad.append(road)
 		pass
 	pass
-	if relocateRoad != lastResult:
-		print(relocateRoad)
 
 #need to remove only the bottom from the relocate road and update middle to be new bottom
 func roadSort():
-	if relocateRoad.size() == 2:
+	if relocateRoad.size() >= 1:
 		var bottomRoad
 		var middleRoad
 		var topRoad
@@ -49,14 +46,16 @@ func roadSort():
 				middleRoad = road
 			if road.get_meta("position") == "top":
 				topRoad = road
-		var newYPos = topRoad.get_top_position()
-		bottomRoad.position.y = newYPos-40
-		bottomRoad.bodyExited = false
-		bottomRoad.set_meta("position", "top")
-		topRoad.set_meta("position", "middle")
-		middleRoad.set_meta("position", "bottom")
-		relocateRoad.erase(bottomRoad)
-		pass
+		
+		if relocateRoad.has(bottomRoad):
+			var newYPos = topRoad.get_top_position()
+			bottomRoad.position.y = newYPos
+			bottomRoad.bodyExited = false
+			bottomRoad.set_meta("position", "top")
+			topRoad.set_meta("position", "middle")
+			middleRoad.set_meta("position", "bottom")
+			relocateRoad.erase(bottomRoad)
+			pass
 
 
 

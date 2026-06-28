@@ -25,5 +25,5 @@ func _on_exit_road_body_exited(body: Node2D) -> void:
 
 func get_top_position() -> float:
 	var street = $Streeet
-	var height = (street.texture.get_height() * street.scale.y)
+	var height = street.texture.get_height() * scale.y
 	return position.y-height

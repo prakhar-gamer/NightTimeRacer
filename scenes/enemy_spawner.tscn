@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cgjbl7xldn322" path="res://Scripts/enemy_logic/enemy_spawner.gd" id="1_ks1gq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_devoi"]
-size = Vector2(772, 47)
+size = Vector2(581, 47)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ks1gq"]
 size = Vector2(25072, 100.5)
@@ -14,7 +14,7 @@ script = ExtResource("1_ks1gq")
 [node name="spawning range" type="Area2D" parent="." unique_id=609266049]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spawning range" unique_id=551017573]
-position = Vector2(0, -1717)
+position = Vector2(0.5, -1717)
 shape = SubResource("RectangleShape2D_devoi")
 
 [node name="exitRange" type="Area2D" parent="." unique_id=1386417209]

@@ -1,40 +1,54 @@
 [gd_scene format=3 uid="uid://cc61ygnyv55gr"]
 
-[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="1_3y6xc"]
 [ext_resource type="Script" uid="uid://c8srjjrpur2b2" path="res://Scripts/enemy_logic/enemy_car.gd" id="1_mr7yb"]
+[ext_resource type="Texture2D" uid="uid://limu0p7d3dx8" path="res://assets/car/enemyCar.png" id="2_mr7yb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ermhv"]
-size = Vector2(91, 87)
+size = Vector2(71, 87)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ermhv"]
+atlas = ExtResource("2_mr7yb")
+region = Rect2(33.104553, 19.944872, 30.535439, 52.97854)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mr7yb"]
 size = Vector2(264, 379)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_knn66"]
-size = Vector2(8.384413, 17.860971)
+size = Vector2(7.3742414, 17.92696)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q4dv"]
-size = Vector2(139, 102)
+size = Vector2(102, 102)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3mung"]
-size = Vector2(148, 98)
+size = Vector2(110, 98)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_knn66"]
+atlas = ExtResource("2_mr7yb")
+region = Rect2(35.161583, 12.421921, 8.396072, 6.2432327)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1q4dv"]
+atlas = ExtResource("2_mr7yb")
+region = Rect2(52.051727, 12.583416, 9.520546, 6.540325)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_diiv3"]
 size = Vector2(1822, 20)
 
 [node name="enemy_car" type="CharacterBody2D" unique_id=953048636]
 script = ExtResource("1_mr7yb")
-SPEED = 500.0
+SPEED = 200.0
 acceleration = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=217354970]
-position = Vector2(0.5, 6.5)
+position = Vector2(1.5, 6.5)
 shape = SubResource("RectangleShape2D_ermhv")
 
 [node name="enemy" type="Sprite2D" parent="." unique_id=59312003]
-modulate = Color(1.5713375, 0, 0.24002774, 1)
+z_index = 1
+texture_filter = 1
 position = Vector2(-3.8146973e-06, 5.0000005)
-scale = Vector2(0.7478126, 0.7109375)
-texture = ExtResource("1_3y6xc")
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_ermhv")
+flip_v = true
 
 [node name="ViewZone" type="Area2D" parent="." unique_id=205231835]
 
@@ -45,7 +59,7 @@ shape = SubResource("RectangleShape2D_mr7yb")
 [node name="crashZone" type="Area2D" parent="." unique_id=857048491]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="crashZone" unique_id=794572578]
-position = Vector2(0.5000081, 11.250005)
+position = Vector2(1.000001, 1.0624995)
 rotation = -3.1415925
 scale = Vector2(9.899323, -5.682782)
 shape = SubResource("RectangleShape2D_knn66")
@@ -53,28 +67,30 @@ shape = SubResource("RectangleShape2D_knn66")
 [node name="leftLaneZone" type="Area2D" parent="." unique_id=615838562]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="leftLaneZone" unique_id=793962807]
-position = Vector2(-115.5, 6)
+position = Vector2(-97, 6)
 shape = SubResource("RectangleShape2D_1q4dv")
 
 [node name="rightLaneZone" type="Area2D" parent="." unique_id=358576735]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="rightLaneZone" unique_id=754959742]
-position = Vector2(124, 5)
+position = Vector2(91, 5)
 shape = SubResource("RectangleShape2D_3mung")
 
 [node name="rightLight" type="Sprite2D" parent="." unique_id=2104735297]
-modulate = Color(0.7570094, 0.7570095, 0, 1)
-self_modulate = Color(0.8556508, 0.8430932, 0.3934258, 1)
-position = Vector2(33, 42)
-scale = Vector2(0.2183466, 0.14609717)
-texture = ExtResource("1_3y6xc")
+z_index = 1
+texture_filter = 1
+position = Vector2(18, 50)
+rotation = 3.1415927
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_knn66")
 
 [node name="leftLight" type="Sprite2D" parent="." unique_id=643724096]
-modulate = Color(0.7570094, 0.7570095, 0, 1)
-self_modulate = Color(0.8556508, 0.8430932, 0.3934258, 1)
-position = Vector2(-31.874998, 41.000004)
-scale = Vector2(0.21679688, 0.13671874)
-texture = ExtResource("1_3y6xc")
+z_index = 1
+texture_filter = 1
+position = Vector2(-16.89325, 50)
+rotation = 3.1415927
+scale = Vector2(2.0296109, 2.1730497)
+texture = SubResource("AtlasTexture_1q4dv")
 
 [node name="cutted_up" type="Area2D" parent="." unique_id=1572901946]
 

@@ -1,15 +1,32 @@
 [gd_scene format=3 uid="uid://brdyyuekl32hn"]
 
 [ext_resource type="Script" uid="uid://bcpng6468trxo" path="res://scenes/ui/title_screen.gd" id="1_aqpy5"]
-[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="1_eb34j"]
+[ext_resource type="Texture2D" uid="uid://81noyladk05h" path="res://assets/Ui/TitleScrenText.png" id="2_a4ium"]
+[ext_resource type="Texture2D" uid="uid://cy4elo35qoe10" path="res://assets/Ui/TitleButtons.png" id="3_r23qo"]
+[ext_resource type="Texture2D" uid="uid://b37c2r484lv8p" path="res://assets/Ui/titleScreenBackground.png" id="4_cfe2f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ik4u"]
+atlas = ExtResource("3_r23qo")
+region = Rect2(26, 11, 273, 68)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqu7r"]
+atlas = ExtResource("3_r23qo")
+region = Rect2(331, 18, 280, 74)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsbfx"]
+atlas = ExtResource("3_r23qo")
+region = Rect2(28, 118, 273, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oraf"]
+atlas = ExtResource("3_r23qo")
+region = Rect2(333, 127, 277, 72)
 
 [node name="titleScreen" type="Node2D" unique_id=1505115482]
 script = ExtResource("1_aqpy5")
 
 [node name="HeroImage" type="Sprite2D" parent="." unique_id=663804288]
-position = Vector2(581, 208)
-scale = Vector2(3.7734375, 1.7109375)
-texture = ExtResource("1_eb34j")
+position = Vector2(576, 174)
+texture = ExtResource("2_a4ium")
 
 [node name="Control" type="Control" parent="." unique_id=153889326]
 layout_mode = 3
@@ -33,12 +50,19 @@ alignment = 1
 [node name="Play" type="TextureButton" parent="Control/MarginContainer/VBoxContainer" unique_id=1492531720]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("1_eb34j")
+texture_normal = SubResource("AtlasTexture_6ik4u")
+texture_hover = SubResource("AtlasTexture_aqu7r")
 
 [node name="Quit" type="TextureButton" parent="Control/MarginContainer/VBoxContainer" unique_id=1690508383]
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("1_eb34j")
+texture_normal = SubResource("AtlasTexture_jsbfx")
+texture_hover = SubResource("AtlasTexture_7oraf")
+
+[node name="TitleScreenBackground" type="Sprite2D" parent="." unique_id=1530094542]
+z_index = -1
+position = Vector2(576, 322)
+texture = ExtResource("4_cfe2f")
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,26 +1,39 @@
 [gd_scene format=3 uid="uid://d2um2sj0844cp"]
 
 [ext_resource type="Script" uid="uid://i6dyy07ih1v2" path="res://Scripts/player_car.gd" id="1_ir7uv"]
-[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="2_v64uw"]
+[ext_resource type="Texture2D" uid="uid://db71a1g5deu2q" path="res://assets/car/playerCar.png" id="2_5hvhq"]
 [ext_resource type="PackedScene" uid="uid://cvq2m1j5hmfie" path="res://scenes/enemy_spawner.tscn" id="3_v64uw"]
 [ext_resource type="PackedScene" uid="uid://bkmvwv7b2cyf0" path="res://scenes/ui/game_pause.tscn" id="4_5hvhq"]
 [ext_resource type="PackedScene" uid="uid://bgck8wbugbvyx" path="res://scenes/ui/dead.tscn" id="5_w3cpc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s2c5k"]
-size = Vector2(59, 62)
+size = Vector2(47, 78)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3cpc"]
+atlas = ExtResource("2_5hvhq")
+region = Rect2(33.51304, 19.365053, 28.769722, 54.052254)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54ksr"]
+atlas = ExtResource("2_5hvhq")
+region = Rect2(82.94087, 18.80912, 8.979614, 8.110603)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ebs"]
+atlas = ExtResource("2_5hvhq")
+region = Rect2(66.56412, 19.687012, 8.278854, 6.0954247)
 
 [node name="PlayerCar" type="CharacterBody2D" unique_id=1530220514 groups=["player_car"]]
 script = ExtResource("1_ir7uv")
 allowBackwords = false
-MaxVelocity = 2000
+acceleration = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986271812]
-position = Vector2(-0.5, -1)
+position = Vector2(-0.5, 1)
 shape = SubResource("RectangleShape2D_s2c5k")
 
 [node name="body" type="Sprite2D" parent="." unique_id=1369685853]
-scale = Vector2(0.453125, 0.515625)
-texture = ExtResource("2_v64uw")
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_w3cpc")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1293125474]
 offset = Vector2(0, -300)
@@ -35,18 +48,20 @@ offset_bottom = -515.0
 
 [node name="right_signal" type="Sprite2D" parent="." unique_id=1243447412]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(20.25, -27.875)
-scale = Vector2(0.12890626, 0.07617186)
-texture = ExtResource("2_v64uw")
+z_index = 1
+texture_filter = 1
+position = Vector2(16.86, -45.12)
+scale = Vector2(2, 2)
+texture = SubResource("AtlasTexture_54ksr")
 
 [node name="left_signal" type="Sprite2D" parent="." unique_id=1613139555]
 modulate = Color(1, 1, 0, 1)
-position = Vector2(-21.75, -27.25)
-scale = Vector2(0.13671875, 0.08203127)
-texture = ExtResource("2_v64uw")
+texture_filter = 1
+position = Vector2(-15.75, -45)
+scale = Vector2(2.0625, 2.2499995)
+texture = SubResource("AtlasTexture_y4ebs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1468184435]
-visible = false
 
 [node name="Dead" parent="CanvasLayer" unique_id=1212509600 instance=ExtResource("5_w3cpc")]
 

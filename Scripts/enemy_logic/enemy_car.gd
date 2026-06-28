@@ -7,7 +7,7 @@ var MaxVelocity = 500
 
 @onready var ViewZone = $ViewZone/CollisionShape2D
 var lane_change = false
-var lane_change_angle = 35
+var lane_change_angle = -35
 var lane = "none"
 var border = "none"
 
@@ -42,7 +42,7 @@ func _physics_process(delta: float) -> void:
 	#lane change returns lanechange angle, 
 	#velocity x = tan(drivingLogic) * velocity . y
 	if lane_change == true:
-		velocity.x = tan(drivingLogic(delta)) * velocity.y
+		velocity.x = -tan(drivingLogic(delta)) * velocity.y
 	if lane_change == false:
 		rotation = 0
 		velocity.x = 0
@@ -87,7 +87,6 @@ func laneChangeCheck():
 
 
 func _on_view_zone_body_exited(body: Node2D) -> void:
-	lane_change=false
 	pass # Replace with function body.
 
 

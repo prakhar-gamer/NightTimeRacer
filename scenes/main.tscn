@@ -3,14 +3,25 @@
 [ext_resource type="PackedScene" uid="uid://d2um2sj0844cp" path="res://scenes/player_car.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://b1ylub7kqqgl3" path="res://Scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://dlym4dbutpoe2" path="res://scenes/road.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://c5o4mhlmfiwud" path="res://assets/background/backgroundparallax.png" id="2_jyhfs"]
 
 [node name="Main" type="Node2D" unique_id=351442125]
 script = ExtResource("1_sugp2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=174211068]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1907999346]
+position = Vector2(-96, -206)
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(1024, 400)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=502404707]
+position = Vector2(546, 412)
+texture = ExtResource("2_jyhfs")
 
 [node name="PlayerCar" parent="." unique_id=1530220514 instance=ExtResource("1_o5qli")]
 position = Vector2(593, 676)
 
 [node name="InfiniteRoad" parent="." unique_id=1104710957 instance=ExtResource("2_0wfyh")]
 z_index = -1
-position = Vector2(18, -908)
-metadata/_edit_lock_ = true
+position = Vector2(8, -1275)
