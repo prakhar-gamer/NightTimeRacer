@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://bkmvwv7b2cyf0"]
 
-[ext_resource type="Script" uid="uid://c8nfp7k2ajv7p" path="res://scenes/ui/game_pause.gd" id="1_qexmg"]
-[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="2_d0iq6"]
+[ext_resource type="Script" uid="uid://c8nfp7k2ajv7p" path="res://Scripts/ui/game_pause.gd" id="1_qexmg"]
+[ext_resource type="Texture2D" uid="uid://ng42x8ixiwsv" path="res://assets/Ui/assets.png" id="2_d0iq6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcret"]
+atlas = ExtResource("2_d0iq6")
+region = Rect2(164.10217, 183.84604, 229.94861, 99.38458)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17tvs"]
+atlas = ExtResource("2_d0iq6")
+region = Rect2(172.61487, 287.94922, 221.48517, 85.15079)
 
 [node name="GamePause" type="Node2D" unique_id=113430541]
 process_mode = 3
@@ -31,11 +39,14 @@ offset_right = 712.0
 offset_bottom = 578.0
 
 [node name="Continue" type="TextureButton" parent="gui/HBoxContainer" unique_id=812541322]
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("2_d0iq6")
+texture_normal = SubResource("AtlasTexture_jcret")
 
 [node name="Quit" type="TextureButton" parent="gui/HBoxContainer" unique_id=598330153]
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("2_d0iq6")
+texture_normal = SubResource("AtlasTexture_17tvs")
 
 [connection signal="pressed" from="gui/HBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="gui/HBoxContainer/Quit" to="." method="_on_quit_pressed"]

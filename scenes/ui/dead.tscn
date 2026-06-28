@@ -1,46 +1,68 @@
 [gd_scene format=3 uid="uid://bgck8wbugbvyx"]
 
 [ext_resource type="Script" uid="uid://1ywlrvuxv1sx" path="res://Scripts/ui/dead.gd" id="1_lik7j"]
-[ext_resource type="Texture2D" uid="uid://c4y58h8nu7wur" path="res://icon.svg" id="2_q522o"]
+[ext_resource type="Texture2D" uid="uid://ng42x8ixiwsv" path="res://assets/Ui/assets.png" id="2_lik7j"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q522o"]
+atlas = ExtResource("2_lik7j")
+region = Rect2(480.29996, 360.84995, 463.09995, 247.50003)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ear0r"]
+atlas = ExtResource("2_lik7j")
+region = Rect2(158.90857, 186.24042, 231.32788, 84.917816)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmucj"]
+atlas = ExtResource("2_lik7j")
+region = Rect2(171.9082, 293.98575, 213.75867, 77.59732)
 
 [node name="Dead" type="Node2D" unique_id=1212509600]
 process_mode = 3
 script = ExtResource("1_lik7j")
 
 [node name="Main Image" type="Sprite2D" parent="." unique_id=577648369]
-modulate = Color(1, 0.29411766, 0.2, 1)
-position = Vector2(576, 133)
-scale = Vector2(3.859375, 1.6640625)
-texture = ExtResource("2_q522o")
+position = Vector2(573, 177.99998)
+scale = Vector2(1.2542603, 1.4150271)
+texture = SubResource("AtlasTexture_q522o")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1626725991]
-offset_left = 443.0
-offset_top = 268.0
-offset_right = 703.0
-offset_bottom = 308.0
+modulate = Color(0, 0, 0, 1)
+z_index = 1
+offset_left = 449.0
+offset_top = 333.0
+offset_right = 706.0
+offset_bottom = 376.0
+text = "asd"
 
 [node name="Container" type="Control" parent="." unique_id=325223127]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 15.0
-offset_top = 306.0
-offset_right = 1142.0
-offset_bottom = 639.0
+offset_left = -2.0
+offset_top = 340.0
+offset_right = 1125.0
+offset_bottom = 617.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Container" unique_id=1223790698]
 layout_mode = 0
-offset_top = 37.0
+offset_top = 61.0
 offset_right = 1123.0
 offset_bottom = 328.0
 alignment = 1
 
 [node name="restart" type="TextureButton" parent="Container/HBoxContainer" unique_id=743773136]
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("2_q522o")
+texture_normal = SubResource("AtlasTexture_ear0r")
 
 [node name="quit" type="TextureButton" parent="Container/HBoxContainer" unique_id=1416930488]
+texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("2_q522o")
+texture_normal = SubResource("AtlasTexture_lmucj")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=989700584]
+offset_left = 435.0
+offset_top = 329.0
+offset_right = 768.0
+offset_bottom = 369.0
 
 [connection signal="pressed" from="Container/HBoxContainer/restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="Container/HBoxContainer/quit" to="." method="_on_quit_pressed"]

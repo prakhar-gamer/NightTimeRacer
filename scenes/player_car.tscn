@@ -24,7 +24,6 @@ region = Rect2(66.56412, 19.687012, 8.278854, 6.0954247)
 [node name="PlayerCar" type="CharacterBody2D" unique_id=1530220514 groups=["player_car"]]
 script = ExtResource("1_ir7uv")
 allowBackwords = false
-acceleration = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986271812]
 position = Vector2(-0.5, 1)

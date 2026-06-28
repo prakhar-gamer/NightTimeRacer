@@ -27,4 +27,5 @@ func _on_restart_pressed() -> void:
 
 #quit button - switches to home screen
 func _on_quit_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/title_screen.tscn")
 	pass
