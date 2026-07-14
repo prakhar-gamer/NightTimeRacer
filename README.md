@@ -1,6 +1,15 @@
 ## Night Racer
 This game uses a top down design and the goal is to cut up the streets and not crash, This is my secound godot game, and has alot of problems, but the assets and code are all made by me
 
+## WHY?
+I'm going to be honest, I just started playing forza, and I was new to making games (still new) so I decided to make this game! The games more like a practice assignment then anything real, but I think I just made a genre of rage endless games lmao.
+
+#How I got the Idea:
+Word is bond, I was playing forza one day, and I wanted like the endless version on my computer, I was gonna make this a 2.5d game liek doom, but then realize I suck at coding and art, so I made it into this!
+
+#Theme:
+Endless - The game continues forever as u can cut up the streets till your eyes bleed. The game has rand generated enemies but, u get pretty fast pretty quick, the game has a infinite road, and infinite enimies too so good luck. 
+
 ## Controls
 W, A, S, D - Controls
 R - Quick restart Mid game
