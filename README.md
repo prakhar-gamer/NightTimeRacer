@@ -8,7 +8,7 @@ I'm going to be honest, I just started playing forza, and I was new to making ga
 Word is bond, I was playing forza one day, and I wanted like the endless version on my computer, I was gonna make this a 2.5d game liek doom, but then realize I suck at coding and art, so I made it into this!
 
 ## Theme:
-Endless - The game continues forever as u can cut up the streets till your eyes bleed. The game has rand generated enemies but, u get pretty fast pretty quick, the game has a infinite road, and infinite enimies too so good luck. 
+Endless - The game continues forever as u can cut up the streets till your eyes bleed. The game has rand generated enemies but, u get pretty fast pretty quick, the game has a infinite road, and infinite enimies too so good luck. But unironically I don't think anyones made it based i think like 70 secs, but if u wanna test it go for it
 
 ## Controls
 W, A, S, D - Controls
